@@ -47,13 +47,6 @@ public class DndItemsRepository {
             item.add(new Item(el.select("div.list-item-title").text(), el.select(
                     "span.list-icon__quality").attr("title"), el.select("a").attr("href").toString()));
         }
-        ArrayList<String> rt = new ArrayList<>();
-        for(Item it : item){
-            rt.add(it.getItemRarity());
-        }
-        var mySet = Set.of(rt);
-
-        System.out.println(mySet);
     }
 
     private ArrayList<Item> itemOnRaritySorter(String rarity) {
@@ -63,6 +56,7 @@ public class DndItemsRepository {
                 result.add(item1);
             }
         }
+        System.out.println("Item_rarity" + result.get(0).getItemRarity());
         return result;
     }
 }
