@@ -1,0 +1,4 @@
+com/kazelin/dan/dnd_items_generator/repository/DndItemsRepository.class
+com/kazelin/dan/dnd_items_generator/DndItemsGeneratorApplication.class
+com/kazelin/dan/dnd_items_generator/model/Item.class
+com/kazelin/dan/dnd_items_generator/controller/GenerationController.class

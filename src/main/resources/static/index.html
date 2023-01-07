@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Генератор случайных предметов</h1>
+    <div class="separator"></div>
+    <div class="buttons-wrapper">
+    <button class="common">Обычный</button>
+    <button class="uncommon">Необычный</button>
+    <button class="rare">Редкий</button>
+    <button class="ultra-rare">Очень редкий</button>
+    <button class="legendary">Легендарный</button>
+    <button class="art">Артефакт</button>
+</div>
+    <div  class="item-description"></div>
+
+</body>
+<script type="text/javascript">
+   $(".common").click(function(){
+  $.ajax({url: "http://85.193.82.89:8080/common", success: function(result){
+    let obj = JSON.parse(result);
+    $(".item-description").html(obj.item_definition);
+  }});
+  
+});
+$(".uncommon").click(function(){
+  $.ajax({url: "http://85.193.82.89:8080/uncommon", success: function(result){
+    let obj = JSON.parse(result);
+    $(".item-description").html(obj.item_definition);
+  }});
+  
+});
+$(".rare").click(function(){
+  $.ajax({url: "http://85.193.82.89:8080/rare", success: function(result){
+    let obj = JSON.parse(result);
+    $(".item-description").html(obj.item_definition);
+  }});
+});
+$(".ultra-rare").click(function(){
+  $.ajax({url: "http://85.193.82.89:8080/ultra-rare", success: function(result){
+    let obj = JSON.parse(result);
+    $(".item-description").html(obj.item_definition);
+  }});
+});
+$(".legendary").click(function(){
+  $.ajax({url: "http://85.193.82.89:8080/legendary", success: function(result){
+    let obj = JSON.parse(result);
+    $(".item-description").html(obj.item_definition);
+  }});
+});
+$(".art").click(function(){
+  $.ajax({url: "http://85.193.82.89:8080/artifact", success: function(result){
+    let obj = JSON.parse(result);
+    $(".item-description").html(obj.item_definition);
+  }});
+});
+    </script>
+    <style>
+        body {
+            background-color: #2f3032;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #feffff;
+        }
+        .item-description {
+            background-color: #7c7e7d;
+            
+        }
+    </style>
+</html>
